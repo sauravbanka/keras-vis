@@ -41,7 +41,7 @@ class Optimizer(object):
         self.wrt_tensor = self.input_tensor if wrt_tensor is None else wrt_tensor
         if self.input_tensor is self.wrt_tensor:
             self.wrt_tensor_is_input_tensor = True
-            self.wrt_tensor = K.identity(self.wrt_tensor)
+            self.wrt_tensor = K.eye(self.wrt_tensor) #identity
         else:
             self.wrt_tensor_is_input_tensor = False
 
