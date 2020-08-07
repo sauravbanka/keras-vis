@@ -164,6 +164,9 @@ crisper activation maximization images. As an exercise, try:
 
 ![opt_progress](https://raw.githubusercontent.com/raghakot/keras-vis/master/images/opt_progress.gif?raw=true "Optimization progress")
 
+
+UPDATED TO WORK WITH KERAS MODELS ON COLAB.
+
 <hr/>
 
 ## Citation

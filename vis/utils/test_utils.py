@@ -2,7 +2,7 @@ from __future__ import absolute_import
 
 import six
 import tensorflow as tf
-from keras import backend as K
+from tensorflow.keras import backend as K
 from . import utils
 
 
