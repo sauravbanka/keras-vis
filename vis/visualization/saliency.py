@@ -3,9 +3,11 @@ from __future__ import absolute_import
 import numpy as np
 from scipy.ndimage.interpolation import zoom
 
-from tensorflow.keras.layers.convolutional import _Conv
-from tensorflow.keras.layers.pooling import _Pooling1D, _Pooling2D, _Pooling3D
-from tensorflow.keras.layers.wrappers import Wrapper
+#from tensorflow.keras.layers.convolutional import _Conv
+#from tensorflow.keras.layers.pooling import _Pooling1D, _Pooling2D, _Pooling3D
+from tensorflow.keras.layers import Conv1D, Conv2D, Conv3D
+from tensorflow.keras.layers import GlobalMaxPool1D, GlobalMaxPool2D, GlobalMaxPool3D, AvgPool1D, AvgPool2D, AvgPool3D, GlobalAvgPool1D, GlobalAvgPool2D, GlobalAvgPool3D, MaxPool1D, MaxPool2D, MaxPool3D
+from tensorflow.keras.layers import Wrapper
 from tensorflow.keras import backend as K
 
 from ..losses import ActivationMaximization
@@ -30,7 +32,7 @@ def _find_penultimate_layer(model, layer_idx, penultimate_layer_idx):
         for idx, layer in utils.reverse_enumerate(model.layers[:layer_idx - 1]):
             if isinstance(layer, Wrapper):
                 layer = layer.layer
-            if isinstance(layer, (_Conv, _Pooling1D, _Pooling2D, _Pooling3D)):
+            if isinstance(layer, (Conv1D, Conv2D, Conv3D, GlobalMaxPool1D, GlobalMaxPool2D, GlobalMaxPool3D, AvgPool1D, AvgPool2D, AvgPool3D, GlobalAvgPool1D, GlobalAvgPool2D, GlobalAvgPool3D, MaxPool1D, MaxPool2D, MaxPool3D)):
                 penultimate_layer_idx = idx
                 break
 
